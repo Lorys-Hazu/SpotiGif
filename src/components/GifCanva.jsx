@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import LoadingSpinner from "./LoadingSpinner";
+import {createGIF} from "gifshot-plus"
 
 const GifCanva = ({ playlistTracks, playlist }) => {
   const [gif, setGif] = useState(null);
@@ -23,7 +24,7 @@ const GifCanva = ({ playlistTracks, playlist }) => {
         .join(" x ")}`,
     };
   });
-  gifshot.createGIF(
+  createGIF(
     {
       images: allImagesLink.filter(Boolean),
       gifWidth: 640,
